@@ -1,19 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Disease Outbreak Map</title>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+/* BODY */
+
+body{
+background:linear-gradient(135deg,#eef5ef,#d9f0dd);
+}
+
+/* HEADER */
+
+.header{
+background:linear-gradient(90deg,#2c7a3f,#43a047);
+color:white;
+text-align:center;
+padding:25px;
+font-size:28px;
+font-weight:bold;
+box-shadow:0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* CONTAINER */
+
+.container{
+width:90%;
+max-width:1000px;
+margin:auto;
+margin-top:40px;
+}
+
+/* TITLE */
+
+h2{
+text-align:center;
+color:#2c7a3f;
+margin-bottom:20px;
+}
+
+/* MAP BOX */
+
+.map-box{
+background:white;
+padding:15px;
+border-radius:12px;
+box-shadow:0 6px 20px rgba(0,0,0,0.15);
+transition:0.3s;
+}
+
+.map-box:hover{
+transform:scale(1.01);
+}
+
+/* MAP */
+
+#map{
+height:500px;
+border-radius:10px;
+}
+
+</style>
+
 </head>
+
 <body>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
 
-<h2>Disease Outbreak Map</h2>
+<div class="header">
+AgriGuard Disease Outbreak Map
+</div>
 
-<div id="map" style="height:500px;"></div>
+<div class="container">
+
+<h2>Livestock Disease Monitoring</h2>
+
+<div class="map-box">
+<div id="map"></div>
+</div>
+
+</div>
 
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
 <script src="../js/map.js"></script>
+
 </body>
 </html>
