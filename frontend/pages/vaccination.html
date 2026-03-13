@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+
+<title>Vaccination Tracker</title>
+
+<link rel="stylesheet" href="../css/style.css">
+
+<style>
+
+table{
+width:100%;
+border-collapse:collapse;
+margin-top:20px;
+}
+
+th,td{
+border:1px solid #ddd;
+padding:10px;
+text-align:center;
+}
+
+th{
+background:#2c7a3f;
+color:white;
+}
+
+input{
+padding:8px;
+margin:5px;
+}
+
+button{
+padding:8px 15px;
+background:#2c7a3f;
+color:white;
+border:none;
+cursor:pointer;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Vaccination Tracker</h2>
+
+<a href="../dashboard.html">⬅ Back to Dashboard</a>
+
+<br><br>
+
+<h3>Add Vaccination Record</h3>
+
+<input id="animalId" placeholder="Animal ID">
+<input id="vaccine" placeholder="Vaccine Name">
+<input id="date" type="date">
+
+<button onclick="addVaccination()">Add</button>
+
+<h3>Vaccination Records</h3>
+
+<table id="vaccinationTable">
+
+<tr>
+<th>Animal ID</th>
+<th>Vaccine</th>
+<th>Date</th>
+</tr>
+
+</table>
+
+</div>
+
+<script>
+
+function addVaccination(){
+
+let animalId=document.getElementById("animalId").value
+let vaccine=document.getElementById("vaccine").value
+let date=document.getElementById("date").value
+
+let table=document.getElementById("vaccinationTable")
+
+let row=table.insertRow()
+
+row.insertCell(0).innerText=animalId
+row.insertCell(1).innerText=vaccine
+row.insertCell(2).innerText=date
+
+}
+
+</script>
+
+</body>
+</html>
