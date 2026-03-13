@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Animals</title>
 
 <link rel="stylesheet" href="../css/style.css">
@@ -99,37 +101,12 @@ color:white;
 font-size:16px;
 }
 
-th{
-transition:0.3s;
-cursor:pointer;
-}
-
-th:hover{
-background:#1e5a2e;
-color: rgb(102, 255, 161);
-}
-
-/* DELETE BUTTON */
-
 .delete-btn{
 background:#e74c3c;
 }
 
 .delete-btn:hover{
 background:#c0392b;
-}
-
-/* ANIMATION */
-
-@keyframes fadeIn{
-from{
-opacity:0;
-transform:translateY(10px);
-}
-to{
-opacity:1;
-transform:translateY(0);
-}
 }
 
 </style>
@@ -167,78 +144,11 @@ Animal Management
 </tr>
 </thead>
 
-<tbody id="animalsTable">
-
-</tbody>
+<tbody id="animalsTable"></tbody>
 
 </table>
 
 </div>
-
-<script>
-
-let animals=[]
-
-function showAddAnimal(){
-document.getElementById("animalForm").style.display="block"
-}
-
-function addAnimal(){
-
-let name=document.getElementById("name").value
-let type=document.getElementById("type").value
-let breed=document.getElementById("breed").value
-
-let animal={
-name:name,
-type:type,
-breed:breed
-}
-
-animals.push(animal)
-
-displayAnimals()
-
-document.getElementById("name").value=""
-document.getElementById("type").value=""
-document.getElementById("breed").value=""
-
-}
-
-function displayAnimals(){
-
-let table=document.getElementById("animalsTable")
-
-table.innerHTML=""
-
-animals.forEach((animal,index)=>{
-
-let row=`
-<tr>
-<td>${animal.name}</td>
-<td>${animal.type}</td>
-<td>${animal.breed}</td>
-<td>
-<button class="delete-btn" onclick="deleteAnimal(${index})">Delete</button>
-</td>
-</tr>
-`
-
-table.innerHTML+=row
-
-})
-
-}
-
-function deleteAnimal(index){
-
-animals.splice(index,1)
-
-displayAnimals()
-
-}
-
-</script>
 
 <script src="../js/api.js"></script>
 <script src="../js/animals.js"></script>
