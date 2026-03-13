@@ -31,6 +31,7 @@ body{
   padding:18px 80px;
   background:linear-gradient(90deg,#2e7d32,#43a047);
   color:white;
+  height: 70px;
   position:sticky;
   top:0;
   z-index:1000;
@@ -50,6 +51,23 @@ body{
   background:linear-gradient(90deg, #fff, #dcedc8);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+.logo{
+display:flex;
+align-items:center;
+gap:10px;
+font-size:26px;
+font-weight:600;
+}
+
+.logo img{
+width: 95px;
+height:95px;
+object-fit:contain;
+transition: 0.3s;
+}
+.logo img:hover{
+transform:rotate(2deg) scale(1.1);
 }
 
 .nav-links a{
@@ -230,9 +248,12 @@ footer{
 
 <!-- NAVBAR -->
 <div class="navbar">
-  <div class="logo">AgriGuard</div>
+  <div class="logo">
+    <img src="logo.png" alt="AgriGuard Logo">
+    <span>AgriGuard</span>
+  </div>
   <div class="nav-links">
-    <a href="#">Home</a>
+    <a href="index.html">Home</a>
     <a href="#">Features</a>
     <a href="#">About</a>
     <a href="login.html">Login</a>

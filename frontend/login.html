@@ -3,70 +3,125 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Login</title>
+
+<title>AgriGuard Login</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
 
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+/* BODY BACKGROUND */
+
 body{
-    font-family: Arial, sans-serif;
-    background:#f4f6f8;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    height:100vh;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#2e7d32,#66bb6a);
 }
 
-/* login container */
+/* LOGIN CONTAINER */
+
 .container{
-    background:white;
-    padding:40px;
-    width:320px;
-    border-radius:8px;
-    box-shadow:0 4px 12px rgba(0,0,0,0.15);
-    text-align:center;
+background:rgba(255,255,255,0.95);
+padding:40px;
+width:350px;
+border-radius:15px;
+box-shadow:0 15px 40px rgba(0,0,0,0.2);
+text-align:center;
+animation:fadeIn 1s ease;
 }
 
+/* TITLE */
+img{
+    width: 100px;
+    height: 75px;
+}
 h2{
-    margin-bottom:20px;
-    color:#2e7d32;
+margin-bottom:25px;
+color:#2e7d32;
+font-weight:600;
 }
 
-/* input fields */
+/* INPUT FIELDS */
+
+.input-group{
+position:relative;
+}
+
 input{
-    width:100%;
-    padding:10px;
-    margin:10px 0;
-    border:1px solid #ccc;
-    border-radius:5px;
-    font-size:14px;
+width:100%;
+padding:12px;
+margin:12px 0;
+border:1px solid #ccc;
+border-radius:8px;
+font-size:14px;
+transition:0.3s;
 }
 
-/* login button */
+input:focus{
+border-color:#2e7d32;
+outline:none;
+box-shadow:0 0 5px rgba(46,125,50,0.5);
+}
+
+/* BUTTON */
+
 button{
-    width:100%;
-    padding:10px;
-    background:#2e7d32;
-    color:white;
-    border:none;
-    border-radius:5px;
-    font-size:16px;
-    cursor:pointer;
+width:100%;
+padding:12px;
+margin-top:10px;
+background:linear-gradient(45deg,#2e7d32,#43a047);
+color:white;
+border:none;
+border-radius:30px;
+font-size:16px;
+cursor:pointer;
+transition:0.3s;
 }
 
 button:hover{
-    background:#1b5e20;
+transform:scale(1.05);
+background:linear-gradient(45deg,#1b5e20,#2e7d32);
 }
 
-/* register link */
+/* REGISTER LINK */
+
 .register-link{
-    margin-top:15px;
-    font-size:14px;
+margin-top:18px;
+font-size:14px;
 }
 
 .register-link a{
-    text-decoration:none;
-    color:#2e7d32;
-    font-weight:bold;
+text-decoration:none;
+color:#2e7d32;
+font-weight:600;
+transition:0.3s;
+}
+
+.register-link a:hover{
+color:#1b5e20;
+text-decoration:underline;
+}
+
+/* ANIMATION */
+
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:translateY(30px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
 }
 
 </style>
@@ -76,11 +131,12 @@ button:hover{
 <body>
 
 <div class="container">
+<img src="logo.png" alt="">
+<h2>AgriGuard Login</h2>
 
-<h2>Login</h2>
+<input id="email" placeholder="Enter Email">
 
-<input id="email" placeholder="Email">
-<input id="password" type="password" placeholder="Password">
+<input id="password" type="password" placeholder="Enter Password">
 
 <button onclick="loginUser()">Login</button>
 
