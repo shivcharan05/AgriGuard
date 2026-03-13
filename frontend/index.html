@@ -16,7 +16,9 @@
   box-sizing:border-box;
   font-family:'Poppins', sans-serif;
 }
-
+html{
+    scroll-behavior: smooth;
+}
 body{
   background:linear-gradient(135deg, #f4f7f6, #dcedc8);
   color:#333;
@@ -253,16 +255,16 @@ footer{
     <span>AgriGuard</span>
   </div>
   <div class="nav-links">
-    <a href="index.html">Home</a>
-    <a href="#">Features</a>
-    <a href="#">About</a>
+    <a href="#home">Home</a>
+    <a href="#feature">Features</a>
+    <a href="#about">About</a>
     <a href="login.html">Login</a>
     <a href="register.html">Register</a>
   </div>
 </div>
 
 <!-- HERO -->
-<section class="hero">
+<section id="home" class="hero">
   <h1>Protect Your Livestock with AgriGuard</h1>
   <p>
     AI-powered livestock disease detection and smart farm monitoring platform
@@ -272,7 +274,7 @@ footer{
 </section>
 
 <!-- FEATURES -->
-<section class="features">
+<section  id="feature" class="features">
   <h2>Our Features</h2>
   <div class="feature-box">
     <div class="feature">
@@ -295,7 +297,7 @@ footer{
 </section>
 
 <!-- ABOUT -->
-<section class="about">
+<section id="about" class="about">
   <h2>About AgriGuard</h2>
   <p>
     AgriGuard is a smart livestock health monitoring platform designed to help
