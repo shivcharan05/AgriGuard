@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Animals</title>
+
+<link rel="stylesheet" href="../css/style.css">
+
+<style>
+
+body{
+font-family:Arial, Helvetica, sans-serif;
+background:#f4f6f9;
+margin:0;
+padding:0;
+}
+
+.container{
+width:90%;
+max-width:900px;
+margin:auto;
+margin-top:40px;
+}
+
+h1{
+text-align:center;
+color:#2c7a3f;
+}
+
+button{
+background:#2c7a3f;
+color:white;
+border:none;
+padding:10px 15px;
+border-radius:6px;
+cursor:pointer;
+margin:5px;
+}
+
+button:hover{
+background:#1e5a2e;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+background:white;
+margin-top:20px;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+th,td{
+padding:12px;
+border-bottom:1px solid #ddd;
+text-align:center;
+}
+
+thead{
+background:#2c7a3f;
+color:white;
+}
+
+input{
+padding:8px;
+margin:5px;
+}
+
+.form-box{
+background:white;
+padding:15px;
+margin-top:15px;
+box-shadow:0 2px 8px rgba(0,0,0,0.1);
+}
+
+.delete-btn{
+background:#d9534f;
+}
+
+.delete-btn:hover{
+background:#c9302c;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Animals</h1>
+
+<button onclick="showAddAnimal()">Add Animal</button>
+
+<div id="animalForm" class="form-box" style="display:none;">
+
+<input id="name" placeholder="Animal Name">
+<input id="type" placeholder="Animal Type">
+<input id="breed" placeholder="Breed">
+
+<button onclick="addAnimal()">Save</button>
+
+</div>
+
+<table>
+
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Breed</th>
+<th>Action</th>
+</tr>
+</thead>
+
+<tbody id="animalsTable">
+
+</tbody>
+
+</table>
+
+</div>
+
+<script>
+
+let animals=[]
+
+function showAddAnimal(){
+document.getElementById("animalForm").style.display="block"
+}
+
+function addAnimal(){
+
+let name=document.getElementById("name").value
+let type=document.getElementById("type").value
+let breed=document.getElementById("breed").value
+
+let animal={
+name:name,
+type:type,
+breed:breed
+}
+
+animals.push(animal)
+
+displayAnimals()
+
+document.getElementById("name").value=""
+document.getElementById("type").value=""
+document.getElementById("breed").value=""
+
+}
+
+function displayAnimals(){
+
+let table=document.getElementById("animalsTable")
+
+table.innerHTML=""
+
+animals.forEach((animal,index)=>{
+
+let row=`
+<tr>
+<td>${animal.name}</td>
+<td>${animal.type}</td>
+<td>${animal.breed}</td>
+<td>
+<button class="delete-btn" onclick="deleteAnimal(${index})">Delete</button>
+</td>
+</tr>
+`
+
+table.innerHTML+=row
+
+})
+
+}
+
+function deleteAnimal(index){
+
+animals.splice(index,1)
+
+displayAnimals()
+
+}
+
+</script>
+
+<script src="../js/api.js"></script>
+
+<script src="../js/animals.js"></script>
+
+</body>
+</html>
