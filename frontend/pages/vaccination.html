@@ -9,34 +9,143 @@
 
 <style>
 
-table{
-width:100%;
-border-collapse:collapse;
+body{
+font-family:Arial, Helvetica, sans-serif;
+background:linear-gradient(135deg,#eef5ef,#d9f0dd);
+margin:0;
+padding:0;
+}
+
+/* HEADER */
+
+.header{
+background:linear-gradient(90deg,#2c7a3f,#43a047);
+color:white;
+text-align:center;
+padding:25px;
+font-size:28px;
+font-weight:bold;
+box-shadow:0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* BACK BUTTON */
+
+.back-btn{
+position:absolute;
+top:20px;
+left:20px;
+background:#2c7a3f;
+color:white;
+padding:8px 15px;
+border-radius:20px;
+text-decoration:none;
+font-weight:bold;
+box-shadow:0 3px 8px rgba(0,0,0,0.2);
+transition:0.3s;
+}
+
+.back-btn:hover{
+background:#1e5a2e;
+transform:scale(1.05);
+}
+
+/* CONTAINER */
+
+.container{
+width:90%;
+max-width:900px;
+margin:auto;
+margin-top:40px;
+}
+
+/* TITLES */
+
+h2{
+text-align:center;
+color:#2c7a3f;
+}
+
+h3{
+color:#2c7a3f;
+}
+
+/* FORM BOX */
+
+.form-box{
+background:white;
+padding:20px;
+border-radius:12px;
+box-shadow:0 4px 15px rgba(0,0,0,0.1);
 margin-top:20px;
 }
 
-th,td{
-border:1px solid #ddd;
+/* INPUT */
+
+input{
 padding:10px;
+margin:5px;
+border:1px solid #ccc;
+border-radius:6px;
+}
+
+/* BUTTON */
+
+button{
+padding:10px 18px;
+background:linear-gradient(45deg,#2c7a3f,#43a047);
+color:white;
+border:none;
+border-radius:25px;
+cursor:pointer;
+font-weight:bold;
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.05);
+background:linear-gradient(45deg,#1e5a2e,#2c7a3f);
+}
+
+/* TABLE */
+
+table{
+width:100%;
+border-collapse:collapse;
+background:white;
+margin-top:25px;
+border-radius:10px;
+overflow:hidden;
+box-shadow:0 5px 15px rgba(0,0,0,0.15);
+}
+
+th,td{
+padding:12px;
 text-align:center;
+border-bottom:1px solid #eee;
 }
 
 th{
-background:#2c7a3f;
+background:linear-gradient(90deg,#2c7a3f,#43a047);
 color:white;
 }
 
-input{
-padding:8px;
-margin:5px;
+tr:hover{
+background:#f1f8f3;
 }
 
-button{
-padding:8px 15px;
-background:#2c7a3f;
-color:white;
+/* DELETE BUTTON */
+
+.delete-btn{
+background:#e74c3c;
 border:none;
+padding:6px 12px;
+color:white;
+border-radius:5px;
 cursor:pointer;
+}
+
+.delete-btn:hover{
+background:#c0392b;
 }
 
 </style>
@@ -45,13 +154,17 @@ cursor:pointer;
 
 <body>
 
+<a href="../dashboard.html" class="back-btn">⬅ Back</a>
+
+<div class="header">
+Livestock Vaccination Tracker
+</div>
+
 <div class="container">
 
 <h2>Vaccination Tracker</h2>
 
-<a href="../dashboard.html">⬅ Back to Dashboard</a>
-
-<br><br>
+<div class="form-box">
 
 <h3>Add Vaccination Record</h3>
 
@@ -61,6 +174,8 @@ cursor:pointer;
 
 <button onclick="addVaccination()">Add</button>
 
+</div>
+
 <h3>Vaccination Records</h3>
 
 <table id="vaccinationTable">
@@ -69,6 +184,7 @@ cursor:pointer;
 <th>Animal ID</th>
 <th>Vaccine</th>
 <th>Date</th>
+<th>Action</th>
 </tr>
 
 </table>
@@ -83,6 +199,11 @@ let animalId=document.getElementById("animalId").value
 let vaccine=document.getElementById("vaccine").value
 let date=document.getElementById("date").value
 
+if(animalId=="" || vaccine=="" || date==""){
+alert("Please fill all fields")
+return
+}
+
 let table=document.getElementById("vaccinationTable")
 
 let row=table.insertRow()
@@ -90,6 +211,23 @@ let row=table.insertRow()
 row.insertCell(0).innerText=animalId
 row.insertCell(1).innerText=vaccine
 row.insertCell(2).innerText=date
+
+let actionCell=row.insertCell(3)
+
+actionCell.innerHTML="<button class='delete-btn' onclick='deleteRow(this)'>Delete</button>"
+
+/* clear inputs */
+
+document.getElementById("animalId").value=""
+document.getElementById("vaccine").value=""
+document.getElementById("date").value=""
+
+}
+
+function deleteRow(button){
+
+let row=button.parentNode.parentNode
+row.remove()
 
 }
 
