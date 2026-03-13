@@ -3,10 +3,115 @@
 
 <head>
 <title>Register</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
+}
+
+/* BODY */
+
+body{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#2e7d32,#66bb6a);
+}
+
+/* CONTAINER */
+
+.container{
+background:white;
+padding:40px;
+width:340px;
+border-radius:12px;
+box-shadow:0 10px 30px rgba(0,0,0,0.2);
+text-align:center;
+animation:fadeIn 1s ease;
+}
+
+img{
+    width: 100px;
+    height: 75px;
+
+}
+h2{
+margin-bottom:20px;
+color:#2e7d32;
+font-size:26px;
+}
+
+/* INPUTS */
+
+input{
+width:100%;
+padding:12px;
+margin:12px 0;
+border:1px solid #ccc;
+border-radius:6px;
+font-size:14px;
+transition:0.3s;
+}
+
+input:focus{
+border-color:#2e7d32;
+outline:none;
+box-shadow:0 0 5px rgba(46,125,50,0.4);
+}
+
+/* BUTTON */
+
+button{
+width:100%;
+padding:12px;
+background:linear-gradient(45deg,#2e7d32,#43a047);
+color:white;
+border:none;
+border-radius:25px;
+font-size:16px;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.05);
+background:linear-gradient(45deg,#1b5e20,#2e7d32);
+}
+
+/* MESSAGE */
+
+#message{
+margin-top:15px;
+font-size:14px;
+color:#333;
+}
+
+/* ANIMATION */
+
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:translateY(30px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+</style>
+
 </head>
 
 <body>
 
+<div class="container">
+<img src="logo.png" alt="">
 <h2>Create Account</h2>
 
 <input id="name" placeholder="Name">
@@ -16,6 +121,8 @@
 <button onclick="registerUser()">Register</button>
 
 <p id="message"></p>
+
+</div>
 
 <script src="js/api.js"></script>
 <script src="js/auth.js"></script>
