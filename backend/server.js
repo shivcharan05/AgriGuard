@@ -33,3 +33,9 @@ const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
  console.log(`Server running on port ${PORT}`);
 });
+
+const dashboardRoutes = require("./routes/dashboardRoutes");
+const outbreakRoutes = require("./routes/outbreakRoutes");
+
+app.use("/api/dashboard",dashboardRoutes);
+app.use("/api/outbreaks",outbreakRoutes);

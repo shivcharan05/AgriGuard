@@ -1,60 +1,19 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
-
-<title>Disease Outbreak Map</title>
-
-<link rel="stylesheet" href="../css/style.css">
-
-<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
-
-<style>
-
-#map{
-height:500px;
-margin-top:20px;
-}
-
-</style>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
-
 <body>
-
-<div class="container">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
 
 <h2>Disease Outbreak Map</h2>
 
-<a href="../dashboard.html">⬅ Back to Dashboard</a>
-
-<div id="map"></div>
-
-</div>
+<div id="map" style="height:500px;"></div>
 
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
-<script>
-
-var map = L.map('map').setView([20.5937,78.9629],5);
-
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
-maxZoom:19
-}).addTo(map);
-
-/* Example outbreak locations */
-
-L.marker([19.7515,75.7139]).addTo(map)
-.bindPopup("Livestock disease outbreak reported here");
-
-L.marker([28.7041,77.1025]).addTo(map)
-.bindPopup("Possible infection detected");
-
-L.marker([12.9716,77.5946]).addTo(map)
-.bindPopup("Vaccination alert zone");
-
-</script>
-
+<script src="../js/map.js"></script>
 </body>
 </html>
