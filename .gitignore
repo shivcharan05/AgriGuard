@@ -1,5 +1,1 @@
-PORT=5000
-MONGO_URI=mongodb+srv://Agriguard123:agriguard123@cluster0.hybpkwo.mongodb.net/?appName=Cluster0
-JWT_SECRET=agriguardsecretkey
-HF_API_KEY=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
-JWT_SECRET=agriguardsecretkey
+.env
