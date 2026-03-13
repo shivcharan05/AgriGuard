@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Disease Detection | AgriGuard</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/disease.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <div class="navbar">
+    <div class="logo">
+      <img src="logo.png" alt="AgriGuard Logo">
+      <span>AgriGuard</span>
+    </div>
+    <div class="nav-links">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="index.html">Logout</a>
+    </div>
+  </div>
+
+  <div class="container disease-container">
+    <div class="header-section">
+      <h2 class="dashboard-title">AI Disease Detection</h2>
+      <p class="subtitle">Upload an image of your poultry or livestock to instantly detect visible diseases and receive treatment recommendations.</p>
+    </div>
+
+    <div class="main-content">
+      
+      <!-- Upload Section -->
+      <div class="upload-card card">
+        <h3>Upload Animal Image</h3>
+        <div class="drag-drop-area" id="dropArea">
+          <input type="file" id="fileInput" accept="image/*" hidden>
+          <div class="upload-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="17 8 12 3 7 8"></polyline>
+              <line x1="12" y1="3" x2="12" y2="15"></line>
+            </svg>
+          </div>
+          <p>Click or drag image to upload</p>
+          <span class="file-name" id="fileName">No file chosen</span>
+        </div>
+        
+        <div class="preview-container" style="display: none;" id="previewContainer">
+          <img id="imagePreview" src="" alt="Image Preview">
+          <button class="remove-btn" id="removeBtn">Remove</button>
+        </div>
+
+        <button class="btn-primary analyze-btn" id="analyzeBtn" disabled>Analyze Image</button>
+      </div>
+
+      <!-- Results Section -->
+      <div class="results-card card" id="resultsCard" style="display: none;">
+        <h3>Analysis Results</h3>
+        
+        <div class="loading-state" id="loadingState" style="display: none;">
+          <div class="spinner"></div>
+          <p>Our AI is analyzing your image. This usually takes a few seconds...</p>
+        </div>
+
+        <div class="result-content" id="resultContent" style="display: none;">
+          <div class="result-header">
+            <div class="status-indicator" id="statusIndicator"></div>
+            <h4 id="diseaseName">Disease Name</h4>
+            <span class="confidence-badge" id="confidenceScore">90% match</span>
+          </div>
+          
+          <div class="result-details">
+            <div class="detail-group">
+              <span class="label">Detection Overview</span>
+              <p id="diseaseDescription">Description of what the AI found...</p>
+            </div>
+            
+            <div class="detail-group treatment-group">
+              <span class="label">Recommended Actions</span>
+              <p id="treatmentPlan">What you should do next...</p>
+            </div>
+            
+            <div class="disclaimer">
+              <i>⚠️ Note: This is an AI assessment. Always consult with a licensed veterinarian for official medical diagnosis and prescriptions.</i>
+            </div>
+          </div>
+        </div>
+        
+        <div class="error-state" id="errorState" style="display: none;">
+          <h4 class="error-title">Analysis Failed</h4>
+          <p id="errorMessage" class="error-msg">Something went wrong contacting the AI server.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="js/disease.js"></script>
+</body>
+</html>
