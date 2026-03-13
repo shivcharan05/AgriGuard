@@ -22,6 +22,8 @@ const animalRoutes = require("./routes/animalRoutes");
 const diseaseRoutes = require("./routes/diseaseRoutes");
 const vaccinationRoutes = require("./routes/vaccinationRoutes");
 const aiRoutes = require("./routes/aiRoutes");
+const dashboardRoutes = require("./routes/dashboardRoutes");
+const outbreakRoutes = require("./routes/outbreakRoutes");
 
 // Route usage
 app.use("/api/auth", authRoutes);
@@ -29,6 +31,8 @@ app.use("/api/animals", animalRoutes);
 app.use("/api/disease", diseaseRoutes);
 app.use("/api/vaccination", vaccinationRoutes);
 app.use("/api/ai", aiRoutes);
+app.use("/api/dashboard", dashboardRoutes);
+app.use("/api/outbreaks", outbreakRoutes);
 
 // Test route
 app.get("/", (req, res) => {

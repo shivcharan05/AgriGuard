@@ -6,6 +6,7 @@ const animalSchema = new mongoose.Schema({
  breed: String,
  age: Number,
  healthStatus: String,
+ vaccinated:Boolean,
  owner: {
   type: mongoose.Schema.Types.ObjectId,
   ref: "User"

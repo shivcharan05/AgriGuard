@@ -7,43 +7,81 @@
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/dashboard.css">
 
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 </head>
 
 <body>
 
 <div class="container">
 
-<h2>Dashboard</h2>
+<h2 class="dashboard-title">Dashboard</h2>
+
+<!-- ACTION CARDS -->
 
 <div class="card-container">
 
 <div class="card">
 <h3>Total Animals</h3>
 <p>Manage your animals</p>
-<button  onclick="goToAnimals()" >View</button>
+<button onclick="goToAnimals()">View</button>
 </div>
 
 <div class="card">
 <h3>Disease Detection</h3>
 <p>Upload image to detect disease</p>
-<button  onclick="goToDisease()">Check</button>
+<button onclick="goToDisease()">Check</button>
 </div>
 
 <div class="card">
 <h3>Vaccination</h3>
 <p>Track vaccination schedule</p>
-<button  onclick="goToVaccination()">Open</button>
+<button onclick="goToVaccination()">Open</button>
 </div>
 
 <div class="card">
 <h3>Outbreak Map</h3>
 <p>See disease outbreaks</p>
+<<<<<<< HEAD
 <button  onclick="goToMap()">View Map</button>
 </div>
 
+=======
+<button onclick="goToMap()">View Map</button>
+>>>>>>> 6e5c087ab5f8505e362cedfb58776ecf6030a5cd
 </div>
 
 </div>
+
+
+<!-- CHART SECTION -->
+
+<div class="charts-container">
+
+<div class="chart-box">
+<h3>Animal Distribution</h3>
+<canvas id="animalChart"></canvas>
+</div>
+
+<div class="chart-box">
+<h3>Disease Cases</h3>
+<canvas id="diseaseChart"></canvas>
+</div>
+
+<div class="chart-box">
+<h3>Vaccination Coverage</h3>
+<canvas id="vaccineChart"></canvas>
+</div>
+
+</div>
+
+
+<div id="alertBox"></div>
+
+</div>
+
+<br>
+
 <div id="footer"></div>
 
 <script src="js/main.js"></script>
