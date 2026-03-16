@@ -1,155 +1,49 @@
-<<<<<<< HEAD
-async function loadAnimals(){
+let animals = [];
 
-const animals = await apiRequest("/animals");
-
-const table = document.getElementById("animalsTable");
-
-table.innerHTML="";
-=======
-let animals = []
-
-
-// SHOW FORM
-
-function showAddAnimal(){
-
-document.getElementById("animalForm").style.display = "block"
-
+async function loadAnimals() {
+  const res = await fetch("http://localhost:5000/api/animals");
+  animals = await res.json();
+  displayAnimals();
 }
 
-
-
-// LOAD ANIMALS
-
-async function loadAnimals(){
-
-try{
-
-const res = await fetch("http://localhost:5000/api/animals")
-
-animals = await res.json()
-
-displayAnimals()
-
-}catch(error){
-
-console.log("Error loading animals:",error)
-
+function displayAnimals() {
+  const table = document.getElementById("animalsTable");
+  table.innerHTML = "";
+  animals.forEach(a => {
+    table.innerHTML += `<tr>
+      <td>${a.name}</td>
+      <td>${a.type}</td>
+      <td>${a.breed}</td>
+      <td><button onclick="deleteAnimal('${a._id}')">Delete</button></td>
+    </tr>`;
+  });
 }
 
+async function addAnimal() {
+  const name = document.getElementById("name").value;
+  const type = document.getElementById("type").value;
+  const breed = document.getElementById("breed").value;
+
+  await fetch("http://localhost:5000/api/animals", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ name, type, breed })
+  });
+
+  document.getElementById("name").value = "";
+  document.getElementById("type").value = "";
+  document.getElementById("breed").value = "";
+
+  loadAnimals();
+  loadDashboard(); // Update dashboard
 }
 
-
-
-// DISPLAY TABLE
-
-function displayAnimals(){
-
-const table = document.getElementById("animalsTable")
-
-table.innerHTML = ""
->>>>>>> bda5eaf0146a2d6109669ff51219ae0bd3afe04c
-
-animals.forEach(animal => {
-
-table.innerHTML += `
-<<<<<<< HEAD
-=======
-
->>>>>>> bda5eaf0146a2d6109669ff51219ae0bd3afe04c
-<tr>
-<td>${animal.name}</td>
-<td>${animal.type}</td>
-<td>${animal.breed}</td>
-<<<<<<< HEAD
-</tr>
-`;
-
-});
-
+async function deleteAnimal(id) {
+  await fetch(`http://localhost:5000/api/animals/${id}`, { method: "DELETE" });
+  loadAnimals();
+  loadDashboard();
 }
+
+function showAddAnimal() { document.getElementById("animalForm").style.display = "block"; }
 
 loadAnimals();
-=======
-<td>
-<button class="delete-btn" onclick="deleteAnimal('${animal._id}')">Delete</button>
-</td>
-</tr>
-
-`
-
-})
-
-}
-
-
-
-// ADD ANIMAL
-
-async function addAnimal(){
-
-const name = document.getElementById("name").value
-const type = document.getElementById("type").value
-const breed = document.getElementById("breed").value
-
-try{
-
-await fetch("http://localhost:5000/api/animals",{
-
-method:"POST",
-
-headers:{
-"Content-Type":"application/json"
-},
-
-body:JSON.stringify({
-name,
-type,
-breed
-})
-
-})
-
-loadAnimals()
-
-document.getElementById("name").value=""
-document.getElementById("type").value=""
-document.getElementById("breed").value=""
-
-}catch(error){
-
-console.log("Error adding animal:",error)
-
-}
-
-}
-
-
-
-// DELETE ANIMAL
-
-async function deleteAnimal(id){
-
-try{
-
-await fetch(`http://localhost:5000/api/animals/${id}`,{
-method:"DELETE"
-})
-
-loadAnimals()
-
-}catch(error){
-
-console.log("Error deleting animal:",error)
-
-}
-
-}
-
-
-
-// INITIAL LOAD
-
-loadAnimals()
->>>>>>> bda5eaf0146a2d6109669ff51219ae0bd3afe04c
