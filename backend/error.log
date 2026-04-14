@@ -1,0 +1,7 @@
+{"error":{"code":404,"message":"models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.","status":"NOT_FOUND"}}
+
+ApiError: {"error":{"code":404,"message":"models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.","status":"NOT_FOUND"}}
+    at throwErrorIfNotOK (C:\Users\mmahe\Desktop\SKNP\AgriGuard\backend\node_modules\@google\genai\dist\node\index.cjs:12713:30)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async C:\Users\mmahe\Desktop\SKNP\AgriGuard\backend\node_modules\@google\genai\dist\node\index.cjs:12416:13
+    at async Models.generateContent (C:\Users\mmahe\Desktop\SKNP\AgriGuard\backend\node_modules\@google\genai\dist\node\index.cjs:13817:24)

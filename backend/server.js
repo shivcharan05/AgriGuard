@@ -15,6 +15,9 @@ app.use(cors());
 app.use(express.json());
 app.use("/uploads", express.static("uploads"));
 
+const aiRoutes = require("./routes/aiRoutes");
+app.use("/api/ai", aiRoutes);
+
 // 4️⃣ Multer storage config
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {

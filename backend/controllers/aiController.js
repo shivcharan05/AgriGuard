@@ -57,19 +57,14 @@ exports.detectDisease = async (req, res) => {
     `;
 
     const response = await ai.models.generateContent({
-      model: "gemini-2.5-flash",
+      model: "gemini-flash-latest",
       contents: [
+        prompt,
         {
-          role: 'user',
-          parts: [
-            { text: prompt },
-            {
-              inlineData: {
-                data: base64Image,
-                mimeType: req.file.mimetype,
-              }
-            }
-          ]
+          inlineData: {
+            data: base64Image,
+            mimeType: req.file.mimetype,
+          }
         }
       ]
     });
@@ -93,8 +88,12 @@ exports.detectDisease = async (req, res) => {
     }
 
   } catch (error) {
-    console.error("Error in detectDisease:", error);
-    res.status(500).json({ error: "AI disease detection failed" });
+    if (error.response) {
+      console.error("Error from Gemini API:", error.response);
+    } else {
+      console.error("Error in detectDisease:", error.message, error.stack);
+    }
+    res.status(500).json({ error: "AI disease detection failed", details: error.message });
   } finally {
     // Clean up the uploaded file
     if (req.file && fs.existsSync(req.file.path)) {

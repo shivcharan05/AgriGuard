@@ -1,0 +1,3 @@
+Warning: Illegally formatted input field
+curl: option -F: is badly used here
+curl: try 'curl --help' for more information
