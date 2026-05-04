@@ -58,7 +58,7 @@ window.uploadImage = async function() {
                 </div>
                 
                 <p style="margin-top: 20px; font-size: 12px; color: #999; font-style: italic;">
-                    ⚠️ Note: This is an AI assessment. Always consult with a licensed veterinarian for official medical diagnosis and prescriptions.
+                    
                 </p>
             </div>
         `;
