@@ -5,95 +5,78 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Disease Outbreak Map</title>
 
+<link rel="stylesheet" href="../css/style.css">
 <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
 
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial, Helvetica, sans-serif;
+body {
+  margin: 0;
+  background: #f0f2f5;
 }
-
-/* BODY */
-
-body{
-background:linear-gradient(135deg,#eef5ef,#d9f0dd);
+.page-header {
+  background: linear-gradient(90deg, #2c7a3f, #43a047);
+  color: white;
+  text-align: center;
+  padding: 25px;
+  font-size: 26px;
+  font-weight: bold;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
-
-/* HEADER */
-
-.header{
-background:linear-gradient(90deg,#2c7a3f,#43a047);
-color:white;
-text-align:center;
-padding:25px;
-font-size:28px;
-font-weight:bold;
-box-shadow:0 4px 12px rgba(0,0,0,0.2);
+.inner-container {
+  width: 90%;
+  max-width: 1000px;
+  margin: 30px auto;
 }
-
-/* CONTAINER */
-
-.container{
-width:90%;
-max-width:1000px;
-margin:auto;
-margin-top:40px;
+.map-section-title {
+  text-align: center;
+  color: #2c7a3f;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
 }
-
-/* TITLE */
-
-h2{
-text-align:center;
-color:#2c7a3f;
-margin-bottom:20px;
+.map-box {
+  background: white;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
 }
-
-/* MAP BOX */
-
-.map-box{
-background:white;
-padding:15px;
-border-radius:12px;
-box-shadow:0 6px 20px rgba(0,0,0,0.15);
-transition:0.3s;
+#map {
+  height: 500px;
+  border-radius: 10px;
 }
-
-.map-box:hover{
-transform:scale(1.01);
-}
-
-/* MAP */
-
-#map{
-height:500px;
-border-radius:10px;
-}
-
 </style>
-
 </head>
 
 <body>
 
-<div class="header">
-AgriGuard Disease Outbreak Map
+<div id="navbar"></div>
+<div class="layout-wrapper">
+  <div id="sidebar"></div>
+  <div class="main-content">
+
+    <div class="page-header" data-i18n="outbreakMap.title">
+      AgriGuard Disease Outbreak Map
+    </div>
+
+    <div class="inner-container">
+
+      <h2 class="map-section-title" data-i18n="outbreakMap.subtitle">
+        Livestock Disease Monitoring
+      </h2>
+
+      <div class="map-box">
+        <div id="map"></div>
+      </div>
+
+    </div>
+
+  </div>
 </div>
-
-<div class="container">
-
-<h2>Livestock Disease Monitoring</h2>
-
-<div class="map-box">
-<div id="map"></div>
-</div>
-
-</div>
+<div id="footer"></div>
 
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-
+<script src="../js/i18n.js"></script>
+<script src="../js/main-pages.js"></script>
 <script src="../js/map.js"></script>
 
 </body>

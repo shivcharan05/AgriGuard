@@ -3,149 +3,203 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>AgriGuard Login</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
-/* BODY BACKGROUND */
-
-body{
-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-background:linear-gradient(135deg,#2e7d32,#66bb6a);
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #2e7d32, #66bb6a);
 }
 
-/* LOGIN CONTAINER */
-
-.container{
-background:rgba(255,255,255,0.95);
-padding:40px;
-width:350px;
-border-radius:15px;
-box-shadow:0 15px 40px rgba(0,0,0,0.2);
-text-align:center;
-animation:fadeIn 1s ease;
+.login-card {
+  background: rgba(255,255,255,0.97);
+  padding: 36px 40px;
+  width: 420px;
+  border-radius: 16px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+  animation: fadeIn 0.6s ease;
 }
 
-/* TITLE */
-img{
-    width: 100px;
-    height: 75px;
-}
-h2{
-margin-bottom:25px;
-color:#2e7d32;
-font-weight:600;
+/* LANGUAGE SWITCHER */
+.login-lang-switcher {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: 20px;
 }
 
-/* INPUT FIELDS */
-
-.input-group{
-position:relative;
+.login-lang-switcher button {
+  background: transparent;
+  border: 1.5px solid #2e7d32;
+  color: #2e7d32;
+  padding: 3px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
 }
 
-input{
-width:100%;
-padding:12px;
-margin:12px 0;
-border:1px solid #ccc;
-border-radius:8px;
-font-size:14px;
-transition:0.3s;
+.login-lang-switcher button:hover {
+  background: #2e7d32;
+  color: white;
 }
 
-input:focus{
-border-color:#2e7d32;
-outline:none;
-box-shadow:0 0 5px rgba(46,125,50,0.5);
+.login-lang-switcher button.lang-active {
+  background: #2e7d32;
+  color: white;
 }
 
-/* BUTTON */
-
-button{
-width:100%;
-padding:12px;
-margin-top:10px;
-background:linear-gradient(45deg,#2e7d32,#43a047);
-color:white;
-border:none;
-border-radius:30px;
-font-size:16px;
-cursor:pointer;
-transition:0.3s;
+/* LOGO */
+.login-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
-button:hover{
-transform:scale(1.05);
-background:linear-gradient(45deg,#1b5e20,#2e7d32);
+.login-logo img {
+  width: 210px;
+  height: 110px;
+  border-radius: 12px;
+  object-fit: contain;
+}
+
+.login-logo h3 {
+  margin-top: 10px;
+  color: #2e7d32;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+/* INPUTS */
+.input-group {
+  margin-bottom: 14px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1.5px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: 0.2s;
+  background: #fafafa;
+}
+
+.input-group input:focus {
+  border-color: #2e7d32;
+  outline: none;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(46,125,50,0.1);
+}
+
+/* LOGIN BUTTON */
+.login-btn {
+  width: 100%;
+  padding: 12px;
+  margin-top: 6px;
+  background: linear-gradient(45deg, #2e7d32, #43a047);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login-btn:hover {
+  transform: scale(1.03);
+  background: linear-gradient(45deg, #1b5e20, #2e7d32);
 }
 
 /* REGISTER LINK */
-
-.register-link{
-margin-top:18px;
-font-size:14px;
+.register-link {
+  margin-top: 16px;
+  text-align: center;
+  font-size: 13px;
+  color: #666;
 }
 
-.register-link a{
-text-decoration:none;
-color:#2e7d32;
-font-weight:600;
-transition:0.3s;
+.register-link a {
+  text-decoration: none;
+  color: #2e7d32;
+  font-weight: 600;
 }
 
-.register-link a:hover{
-color:#1b5e20;
-text-decoration:underline;
+.register-link a:hover {
+  text-decoration: underline;
 }
 
-/* ANIMATION */
-
-@keyframes fadeIn{
-from{
-opacity:0;
-transform:translateY(30px);
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
-to{
-opacity:1;
-transform:translateY(0);
-}
-}
-
 </style>
-
 </head>
 
 <body>
 
-<div class="container">
-<img src="logo.png" alt="">
-<h2>AgriGuard Login</h2>
+<div class="login-card">
 
-<input id="email" placeholder="Enter Email">
+  <!-- Language Switcher -->
+  <div class="login-lang-switcher">
+    <button data-lang-btn="en" onclick="i18nSetLanguage('en')" title="English">EN</button>
+    <button data-lang-btn="hi" onclick="i18nSetLanguage('hi')" title="Hindi">हिं</button>
+    <button data-lang-btn="mr" onclick="i18nSetLanguage('mr')" title="Marathi">मर</button>
+  </div>
 
-<input id="password" type="password" placeholder="Enter Password">
+  <!-- Logo + Title -->
+  <div class="login-logo">
+    <img src="logo.png" alt="AgriGuard Logo">
+    <h3 data-i18n="login.title">AgriGuard Login</h3>
+  </div>
 
-<button onclick="loginUser()">Login</button>
+  <!-- Email -->
+  <div class="input-group">
+    <input
+      id="email"
+      type="email"
+      data-i18n-placeholder="login.emailPlaceholder"
+      placeholder="Enter Email">
+  </div>
 
-<div class="register-link">
-Don't have an account? <a href="register.html">Register</a>
+  <!-- Password -->
+  <div class="input-group">
+    <input
+      id="password"
+      type="password"
+      data-i18n-placeholder="login.passwordPlaceholder"
+      placeholder="Enter Password">
+  </div>
+
+  <!-- Login Button -->
+  <button class="login-btn" onclick="loginUser()" data-i18n="login.loginButton">
+    Login
+  </button>
+
+  <!-- Register Link -->
+  <div class="register-link">
+    <span data-i18n="login.noAccount">Don't have an account?</span>
+    <a href="register.html" data-i18n="login.register">Register</a>
+  </div>
+
 </div>
 
-</div>
-
+<script src="js/i18n.js"></script>
 <script src="js/api.js"></script>
 <script src="js/auth.js"></script>
 

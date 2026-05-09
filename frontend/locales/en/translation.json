@@ -1,0 +1,116 @@
+{
+  "navbar": {
+    "brand": "AgriGuard",
+    "dashboard": "Dashboard",
+    "profile": "Profile",
+    "logout": "Logout"
+  },
+  "sidebar": {
+    "menu": "Menu",
+    "dashboard": "Dashboard",
+    "farm": "Farm",
+    "animals": "Animals",
+    "diseaseDetection": "Disease Detection",
+    "vaccination": "Vaccination",
+    "outbreakMap": "Outbreak Map",
+    "community": "Community",
+    "training": "Training"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "totalAnimals": "Total Animals",
+    "manageAnimals": "Manage your animals",
+    "view": "View",
+    "diseaseDetection": "Disease Detection",
+    "uploadImage": "Upload image to detect disease",
+    "check": "Check",
+    "vaccination": "Vaccination",
+    "trackVaccination": "Track vaccination schedule",
+    "open": "Open",
+    "outbreakMap": "Outbreak Map",
+    "seeOutbreaks": "See disease outbreaks",
+    "viewMap": "View Map",
+    "animalDistribution": "Animal Distribution",
+    "diseaseCases": "Disease Cases",
+    "vaccinationCoverage": "Vaccination Coverage"
+  },
+  "disease": {
+    "title": "Livestock Disease Detection",
+    "uploadInstruction": "Upload an image of the animal to detect possible diseases using AI",
+    "detectButton": "Detect Disease",
+    "result": "Result"
+  },
+  "animals": {
+    "title": "Animal Management",
+    "addAnimal": "Add Animal",
+    "namePlaceholder": "Animal Name",
+    "typePlaceholder": "Animal Type",
+    "breedPlaceholder": "Breed",
+    "save": "Save",
+    "colName": "Name",
+    "colType": "Type",
+    "colBreed": "Breed",
+    "colAction": "Action"
+  },
+  "login": {
+    "title": "AgriGuard Login",
+    "emailPlaceholder": "Enter Email",
+    "passwordPlaceholder": "Enter Password",
+    "loginButton": "Login",
+    "noAccount": "Don't have an account?",
+    "register": "Register"
+  },
+  "language": {
+    "select": "Language"
+  },
+  "register": {
+  "title": "Create Account",
+  "namePlaceholder": "Name",
+  "emailPlaceholder": "Email",
+  "passwordPlaceholder": "Password",
+  "registerButton": "Register",
+  "haveAccount": "Already have an account?",
+  "login": "Login"
+  },
+  "vaccination": {
+  "pageTitle": "Livestock Vaccination Tracker",
+  "trackerTitle": "Vaccination Tracker",
+  "addRecord": "Add Vaccination Record",
+  "animalId": "Animal ID",
+  "animalType": "Animal Type",
+  "vaccineName": "Vaccine Name",
+  "add": "Add",
+  "records": "Vaccination Records",
+  "colAnimalId": "Animal ID",
+  "colAnimalType": "Animal Type",
+  "colVaccine": "Vaccine",
+  "colDate": "Date",
+  "colAction": "Action"
+  },
+  "outbreakMap": {
+  "title": "AgriGuard Disease Outbreak Map",
+  "subtitle": "Livestock Disease Monitoring"
+  },
+  "home": {
+  "navHome": "Home",
+  "navFeatures": "Features",
+  "navAbout": "About",
+  "navLogin": "Login",
+  "navRegister": "Register",
+  "heroTitle": "Protect Your Livestock with AgriGuard",
+  "heroDesc": "AI-powered livestock disease detection and smart farm monitoring platform to keep your animals healthy and productive.",
+  "heroBtn": "Get Started",
+  "featuresTitle": "Our Features",
+  "feature1Title": "AI Disease Detection",
+  "feature1Desc": "Upload animal images and detect diseases instantly using AI technology.",
+  "feature2Title": "Vaccination Tracker",
+  "feature2Desc": "Keep track of livestock vaccination schedules and get reminders.",
+  "feature3Title": "Farm Health Monitoring",
+  "feature3Desc": "Monitor hygiene and health conditions of your livestock farm.",
+  "feature4Title": "Vet Consultation",
+  "feature4Desc": "Connect with veterinary experts for professional guidance.",
+  "aboutTitle": "About AgriGuard",
+  "aboutDesc": "AgriGuard is a smart livestock health monitoring platform designed to help farmers detect diseases early, manage farm hygiene, track vaccinations and connect with veterinary experts. Our goal is to reduce livestock diseases and improve farm productivity using modern AI technology.",
+  "footer": "© 2026 AgriGuard | Livestock Disease Surveillance Platform"
+  }
+}

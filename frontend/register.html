@@ -1,132 +1,215 @@
 <!DOCTYPE html>
 <html>
-
 <head>
 <title>Register</title>
 
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial, sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Arial, sans-serif;
 }
 
-/* BODY */
-
-body{
-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-background:linear-gradient(135deg,#2e7d32,#66bb6a);
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #2e7d32, #66bb6a);
 }
 
-/* CONTAINER */
-
-.container{
-background:white;
-padding:40px;
-width:340px;
-border-radius:12px;
-box-shadow:0 10px 30px rgba(0,0,0,0.2);
-text-align:center;
-animation:fadeIn 1s ease;
+.register-card {
+  background: white;
+  padding: 36px 40px;
+  width: 420px;
+  border-radius: 16px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+  animation: fadeIn 0.6s ease;
 }
 
-img{
-    width: 100px;
-    height: 75px;
-
+/* LANGUAGE SWITCHER */
+.login-lang-switcher {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: 20px;
 }
-h2{
-margin-bottom:20px;
-color:#2e7d32;
-font-size:26px;
+
+.login-lang-switcher button {
+  background: transparent;
+  border: 1.5px solid #2e7d32;
+  color: #2e7d32;
+  padding: 3px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.login-lang-switcher button:hover {
+  background: #2e7d32;
+  color: white;
+}
+
+.login-lang-switcher button.lang-active {
+  background: #2e7d32;
+  color: white;
+}
+
+/* LOGO */
+.register-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.register-logo img {
+  width: 250px;
+  height: 100px;
+  border-radius: 10px;
+  object-fit: contain;
+}
+
+.register-logo h2 {
+  margin-top: 10px;
+  color: #2e7d32;
+  font-size: 30px;
+  font-weight: 600;
 }
 
 /* INPUTS */
-
-input{
-width:100%;
-padding:12px;
-margin:12px 0;
-border:1px solid #ccc;
-border-radius:6px;
-font-size:14px;
-transition:0.3s;
+.input-group {
+  margin-bottom: 14px;
 }
 
-input:focus{
-border-color:#2e7d32;
-outline:none;
-box-shadow:0 0 5px rgba(46,125,50,0.4);
+.input-group input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1.5px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: 0.2s;
+  background: #fafafa;
+}
+
+.input-group input:focus {
+  border-color: #2e7d32;
+  outline: none;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(46,125,50,0.1);
 }
 
 /* BUTTON */
-
-button{
-width:100%;
-padding:12px;
-background:linear-gradient(45deg,#2e7d32,#43a047);
-color:white;
-border:none;
-border-radius:25px;
-font-size:16px;
-cursor:pointer;
-transition:0.3s;
+.register-btn {
+  width: 100%;
+  padding: 12px;
+  margin-top: 6px;
+  background: linear-gradient(45deg, #2e7d32, #43a047);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-button:hover{
-transform:scale(1.05);
-background:linear-gradient(45deg,#1b5e20,#2e7d32);
+.register-btn:hover {
+  transform: scale(1.03);
+  background: linear-gradient(45deg, #1b5e20, #2e7d32);
 }
 
-/* MESSAGE */
-
-#message{
-margin-top:15px;
-font-size:14px;
-color:#333;
+/* LOGIN LINK */
+.login-link {
+  margin-top: 16px;
+  text-align: center;
+  font-size: 13px;
+  color: #666;
 }
 
-/* ANIMATION */
-
-@keyframes fadeIn{
-from{
-opacity:0;
-transform:translateY(30px);
-}
-to{
-opacity:1;
-transform:translateY(0);
-}
+.login-link a {
+  text-decoration: none;
+  color: #2e7d32;
+  font-weight: 600;
 }
 
+.login-link a:hover {
+  text-decoration: underline;
+}
+
+#message {
+  margin-top: 12px;
+  text-align: center;
+  font-size: 13px;
+  color: #333;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
 </style>
-
 </head>
 
 <body>
 
-<div class="container">
-<img src="logo.png" alt="">
-<h2>Create Account</h2>
+<div class="register-card">
 
-<input id="name" placeholder="Name">
-<input id="email" placeholder="Email">
-<input id="password" type="password" placeholder="Password">
+  <!-- Language Switcher -->
+  <div class="login-lang-switcher">
+    <button data-lang-btn="en" onclick="i18nSetLanguage('en')" title="English">EN</button>
+    <button data-lang-btn="hi" onclick="i18nSetLanguage('hi')" title="Hindi">हिं</button>
+    <button data-lang-btn="mr" onclick="i18nSetLanguage('mr')" title="Marathi">मर</button>
+  </div>
 
-<button onclick="registerUser()">Register</button>
+  <!-- Logo + Title -->
+  <div class="register-logo">
+    <img src="logo.png" alt="AgriGuard Logo">
+    <h2 data-i18n="register.title">Create Account</h2>
+  </div>
 
-<p id="message"></p>
+  <!-- Inputs -->
+  <div class="input-group">
+    <input id="name"
+      data-i18n-placeholder="register.namePlaceholder"
+      placeholder="Name">
+  </div>
+
+  <div class="input-group">
+    <input id="email"
+      data-i18n-placeholder="register.emailPlaceholder"
+      placeholder="Email">
+  </div>
+
+  <div class="input-group">
+    <input id="password" type="password"
+      data-i18n-placeholder="register.passwordPlaceholder"
+      placeholder="Password">
+  </div>
+
+  <!-- Register Button -->
+  <button class="register-btn"
+    onclick="registerUser()"
+    data-i18n="register.registerButton">
+    Register
+  </button>
+
+  <p id="message"></p>
+
+  <!-- Login Link -->
+  <div class="login-link">
+    <span data-i18n="register.haveAccount">Already have an account?</span>
+    <a href="login.html" data-i18n="register.login">Login</a>
+  </div>
 
 </div>
 
+<script src="js/i18n.js"></script>
 <script src="js/api.js"></script>
 <script src="js/auth.js"></script>
 
 </body>
-
 </html>

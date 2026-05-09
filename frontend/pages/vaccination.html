@@ -6,59 +6,179 @@
 <title>Vaccination Tracker</title>
 <link rel="stylesheet" href="../css/style.css">
 <style>
-body{font-family:Arial, Helvetica, sans-serif;background:linear-gradient(135deg,#eef5ef,#d9f0dd);margin:0;padding:0;}
-.header{background:linear-gradient(90deg,#2c7a3f,#43a047);color:white;text-align:center;padding:25px;font-size:28px;font-weight:bold;box-shadow:0 4px 12px rgba(0,0,0,0.2);}
-.back-btn{position:absolute;top:20px;left:20px;background:#2c7a3f;color:white;padding:8px 15px;border-radius:20px;text-decoration:none;font-weight:bold;box-shadow:0 3px 8px rgba(0,0,0,0.2);transition:0.3s;}
-.back-btn:hover{background:#1e5a2e;transform:scale(1.05);}
-.container{width:90%;max-width:900px;margin:auto;margin-top:40px;}
-h2{text-align:center;color:#2c7a3f;}
-h3{color:#2c7a3f;}
-.form-box{background:white;padding:20px;border-radius:12px;box-shadow:0 4px 15px rgba(0,0,0,0.1);margin-top:20px;}
-input{padding:10px;margin:5px;border:1px solid #ccc;border-radius:6px;}
-button{padding:10px 18px;background:linear-gradient(45deg,#2c7a3f,#43a047);color:white;border:none;border-radius:25px;cursor:pointer;font-weight:bold;transition:0.3s;}
-button:hover{transform:scale(1.05);background:linear-gradient(45deg,#1e5a2e,#2c7a3f);}
-table{width:100%;border-collapse:collapse;background:white;margin-top:25px;border-radius:10px;overflow:hidden;box-shadow:0 5px 15px rgba(0,0,0,0.15);}
-th,td{padding:12px;text-align:center;border-bottom:1px solid #eee;}
-th{background:linear-gradient(90deg,#2c7a3f,#43a047);color:white;}
-tr:hover{background:#f1f8f3;}
-.delete-btn{background:#e74c3c;border:none;padding:6px 12px;color:white;border-radius:5px;cursor:pointer;}
-.delete-btn:hover{background:#c0392b;}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f0f2f5;
+  margin: 0;
+  padding: 0;
+}
+.page-header {
+  background: linear-gradient(90deg, #2c7a3f, #43a047);
+  color: white;
+  text-align: center;
+  padding: 25px;
+  font-size: 26px;
+  font-weight: bold;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+.inner-container {
+  width: 90%;
+  max-width: 900px;
+  margin: 30px auto;
+}
+.section-title {
+  text-align: center;
+  color: #2c7a3f;
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+.form-box {
+  background: white;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  margin-bottom: 24px;
+}
+.form-box h3 {
+  color: #2c7a3f;
+  margin-bottom: 16px;
+  font-size: 16px;
+}
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+.form-row input {
+  padding: 10px 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  flex: 1;
+  min-width: 140px;
+}
+.form-row input:focus {
+  outline: none;
+  border-color: #2c7a3f;
+}
+.add-btn {
+  padding: 10px 22px;
+  background: linear-gradient(45deg, #2c7a3f, #43a047);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+  white-space: nowrap;
+}
+.add-btn:hover {
+  transform: scale(1.05);
+}
+.records-title {
+  color: #2c7a3f;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+th, td {
+  padding: 13px;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+}
+thead {
+  background: linear-gradient(90deg, #2c7a3f, #43a047);
+  color: white;
+}
+tr:hover {
+  background: #f1f8f3;
+}
+.delete-btn {
+  background: #e74c3c;
+  border: none;
+  padding: 6px 12px;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.delete-btn:hover {
+  background: #c0392b;
+}
 </style>
 </head>
 <body>
 
-<a href="../dashboard.html" class="back-btn">⬅ Back</a>
+<div id="navbar"></div>
+<div class="layout-wrapper">
+  <div id="sidebar"></div>
+  <div class="main-content">
 
-<div class="header">Livestock Vaccination Tracker</div>
+    <div class="page-header" data-i18n="vaccination.pageTitle">
+      Livestock Vaccination Tracker
+    </div>
 
-<div class="container">
-  <h2>Vaccination Tracker</h2>
+    <div class="inner-container">
 
-  <div class="form-box">
-    <h3>Add Vaccination Record</h3>
-    <input id="animalId" placeholder="Animal ID">
-    <input id="animalType" placeholder="Animal Type">
-    <input id="vaccine" placeholder="Vaccine Name">
-    <input id="date" type="date">
-    <button onclick="addVaccination()">Add</button>
+      <h2 class="section-title" data-i18n="vaccination.trackerTitle">
+        Vaccination Tracker
+      </h2>
+
+      <div class="form-box">
+        <h3 data-i18n="vaccination.addRecord">Add Vaccination Record</h3>
+        <div class="form-row">
+          <input id="animalId"
+            data-i18n-placeholder="vaccination.animalId"
+            placeholder="Animal ID">
+          <input id="animalType"
+            data-i18n-placeholder="vaccination.animalType"
+            placeholder="Animal Type">
+          <input id="vaccine"
+            data-i18n-placeholder="vaccination.vaccineName"
+            placeholder="Vaccine Name">
+          <input id="date" type="date">
+          <button class="add-btn"
+            onclick="addVaccination()"
+            data-i18n="vaccination.add">
+            Add
+          </button>
+        </div>
+      </div>
+
+      <p class="records-title" data-i18n="vaccination.records">
+        Vaccination Records
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th data-i18n="vaccination.colAnimalId">Animal ID</th>
+            <th data-i18n="vaccination.colAnimalType">Animal Type</th>
+            <th data-i18n="vaccination.colVaccine">Vaccine</th>
+            <th data-i18n="vaccination.colDate">Date</th>
+            <th data-i18n="vaccination.colAction">Action</th>
+          </tr>
+        </thead>
+        <tbody id="vaccinationTable"></tbody>
+      </table>
+
+    </div>
+
   </div>
-
-  <h3>Vaccination Records</h3>
-  <table>
-    <thead>
-      <tr>
-        <th>Animal ID</th>
-        <th>Animal Type</th>
-        <th>Vaccine</th>
-        <th>Date</th>
-        <th>Action</th>
-      </tr>
-    </thead>
-    <tbody id="vaccinationTable"></tbody>
-  </table>
 </div>
+<div id="footer"></div>
 
+<script src="../js/i18n.js"></script>
+<script src="../js/main-pages.js"></script>
 <script src="../js/vaccination.js"></script>
-<script src="../js/dashboard.js"></script>
+
 </body>
 </html>

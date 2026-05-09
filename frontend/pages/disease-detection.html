@@ -6,152 +6,169 @@
 <title>Disease Detection</title>
 
 <link rel="stylesheet" href="../css/style.css">
-
 <style>
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial, sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
 
-body{
-background:#f4f7f6;
-min-height:100vh;
-display:flex;
-flex-direction:column;
-align-items:center;
+body {
+  background: #f4f7f6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 /* HEADER */
-
-.header{
-width:100%;
-background:linear-gradient(90deg,#2e7d32,#43a047);
-color:white;
-text-align:center;
-padding:30px 10px;
-box-shadow:0 4px 10px rgba(0,0,0,0.2);
+.header {
+  width: 100%;
+  background: linear-gradient(90deg, #2e7d32, #43a047);
+  color: white;
+  text-align: center;
+  padding: 30px 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
-.header h1{
-font-size:36px;
+.header h1 {
+  font-size: 32px;
+  font-weight: 700;
 }
 
 /* MAIN AREA */
-
-.main{
-margin-top:50px;
-width:80%;
-max-width:800px;
-text-align:center;
+.main {
+  width: 100%;
+  max-width: 800px;
+  margin: 50px auto;
+  text-align: center;
+  padding: 0 24px;
 }
 
 /* UPLOAD BOX */
-
-.upload-box{
-border:2px dashed #2e7d32;
-padding:40px;
-border-radius:15px;
-background:white;
-transition:0.3s;
+.upload-box {
+  border: 2px dashed #2e7d32;
+  padding: 40px;
+  border-radius: 15px;
+  background: white;
+  transition: 0.3s;
 }
 
-.upload-box:hover{
-background:#f1f8e9;
-transform:scale(1.02);
+.upload-box:hover {
+  background: #f1f8e9;
+  transform: scale(1.02);
+}
+
+.upload-box p {
+  font-size: 15px;
+  color: #555;
+  margin-bottom: 16px;
 }
 
 /* FILE INPUT */
-
-input[type="file"]{
-margin-top:20px;
+input[type="file"] {
+  margin-top: 10px;
 }
 
 /* BUTTON */
-
-button{
-margin-top:25px;
-padding:14px 35px;
-font-size:16px;
-border:none;
-border-radius:30px;
-background:linear-gradient(45deg,#2e7d32,#43a047);
-color:white;
-cursor:pointer;
-transition:0.3s;
+button {
+  margin-top: 25px;
+  padding: 14px 35px;
+  font-size: 16px;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(45deg, #2e7d32, #43a047);
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-button:hover{
-transform:scale(1.08);
-background:linear-gradient(45deg,#1b5e20,#2e7d32);
+button:hover {
+  transform: scale(1.08);
+  background: linear-gradient(45deg, #1b5e20, #2e7d32);
 }
 
 /* RESULT PANEL */
-
-#result{
-margin-top:40px;
-padding:20px;
-border-radius:10px;
-background:white;
-box-shadow:0 5px 15px rgba(0,0,0,0.1);
-font-size:18px;
-color:#2e7d32;
-min-height:40px;
+#result {
+  margin-top: 40px;
+  padding: 20px;
+  border-radius: 10px;
+  background: white;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  font-size: 18px;
+  color: #2e7d32;
+  min-height: 40px;
 }
 
 /* IMAGE PREVIEW */
+#preview {
+  margin-top: 20px;
+  max-width: 300px;
+  display: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
 
-#preview{
-margin-top:20px;
-max-width:300px;
-display:none;
-border-radius:10px;
-box-shadow:0 4px 10px rgba(0,0,0,0.2);
+/* FIX: main-content takes full remaining width */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  background: #f4f7f6;
 }
 
 </style>
-
 </head>
-
 <body>
 
-<div class="header">
-<h1>Livestock Disease Detection</h1>
+<div id="navbar"></div>
+
+<div class="layout-wrapper">
+  <div id="sidebar"></div>
+
+  <div class="main-content">
+
+    <div class="header">
+      <h1 data-i18n="disease.title">Livestock Disease Detection</h1>
+    </div>
+
+    <div class="main">
+
+      <div class="upload-box">
+        <p data-i18n="disease.uploadInstruction">
+          Upload an image of the animal to detect possible diseases using AI
+        </p>
+        <input type="file" id="image" onchange="previewImage(event)">
+        <br>
+        <img id="preview">
+      </div>
+
+      <button onclick="uploadImage()" data-i18n="disease.detectButton">
+        Detect Disease
+      </button>
+
+      <div id="result" data-i18n="disease.result">Result</div>
+
+    </div>
+
+  </div>
 </div>
 
-<div class="main">
-
-<div class="upload-box">
-
-<p>Upload an image of the animal to detect possible diseases using AI</p>
-
-<input type="file" id="image" onchange="previewImage(event)">
-
-<br>
-
-<img id="preview">
-
-</div>
-
-<button onclick="uploadImage()">Detect Disease</button>
-
-<div id="result">Result</div>
-
-</div>
-</div>
+<div id="footer"></div>
 
 <script>
-
 function previewImage(event){
-const preview=document.getElementById("preview");
-preview.src=URL.createObjectURL(event.target.files[0]);
-preview.style.display="block";
+  const preview = document.getElementById("preview");
+  preview.src = URL.createObjectURL(event.target.files[0]);
+  preview.style.display = "block";
 }
-
 </script>
 
+<!-- AFTER -->
+<script src="../js/i18n.js"></script>
+<script src="../js/main-pages.js"></script>
 <script src="../js/disease.js"></script>
 
 </body>

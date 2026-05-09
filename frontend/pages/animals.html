@@ -22,32 +22,51 @@ thead{background:linear-gradient(90deg,#2c7a3f,#43a047);color:white;font-size:16
 </head>
 <body>
 
-<div class="header">Animal Management</div>
+<div id="navbar"></div>
 
-<div class="container">
-  <button onclick="showAddAnimal()">Add Animal</button>
+<div class="layout-wrapper">
+  <div id="sidebar"></div>
 
-  <div id="animalForm" class="form-box" style="display:none;">
-    <input id="name" placeholder="Animal Name">
-    <input id="type" placeholder="Animal Type">
-    <input id="breed" placeholder="Breed">
-    <button onclick="addAnimal()">Save</button>
+  <div class="main-content">
+
+    <div class="header" data-i18n="animals.title">Animal Management</div>
+
+    <div class="container">
+
+      <button onclick="showAddAnimal()" data-i18n="animals.addAnimal">
+        Add Animal
+      </button>
+
+      <div id="animalForm" class="form-box" style="display:none;">
+        <input id="name" data-i18n-placeholder="animals.namePlaceholder" placeholder="Animal Name">
+        <input id="type" data-i18n-placeholder="animals.typePlaceholder" placeholder="Animal Type">
+        <input id="breed" data-i18n-placeholder="animals.breedPlaceholder" placeholder="Breed">
+        <button onclick="addAnimal()" data-i18n="animals.save">Save</button>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th data-i18n="animals.colName">Name</th>
+            <th data-i18n="animals.colType">Type</th>
+            <th data-i18n="animals.colBreed">Breed</th>
+            <th data-i18n="animals.colAction">Action</th>
+          </tr>
+        </thead>
+        <tbody id="animalsTable"></tbody>
+      </table>
+
+    </div>
+
   </div>
-
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Breed</th>
-        <th>Action</th>
-      </tr>
-    </thead>
-    <tbody id="animalsTable"></tbody>
-  </table>
 </div>
 
+<div id="footer"></div>
+
+<!-- AFTER -->
+<script src="../js/i18n.js"></script>
+<script src="../js/main-pages.js"></script>
 <script src="../js/animals.js"></script>
-<script src="../js/dashboard.js"></script>
+
 </body>
 </html>

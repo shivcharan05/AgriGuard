@@ -1,0 +1,116 @@
+{
+  "navbar": {
+    "brand": "एग्रीगार्ड",
+    "dashboard": "डैशबोर्ड",
+    "profile": "प्रोफ़ाइल",
+    "logout": "लॉग आउट"
+  },
+  "sidebar": {
+    "menu": "मेनू",
+    "dashboard": "डैशबोर्ड",
+    "farm": "खेत",
+    "animals": "पशु",
+    "diseaseDetection": "रोग पहचान",
+    "vaccination": "टीकाकरण",
+    "outbreakMap": "प्रकोप मानचित्र",
+    "community": "समुदाय",
+    "training": "प्रशिक्षण"
+  },
+  "dashboard": {
+    "title": "डैशबोर्ड",
+    "totalAnimals": "कुल पशु",
+    "manageAnimals": "अपने पशुओं को प्रबंधित करें",
+    "view": "देखें",
+    "diseaseDetection": "रोग पहचान",
+    "uploadImage": "रोग पहचानने के लिए छवि अपलोड करें",
+    "check": "जांचें",
+    "vaccination": "टीकाकरण",
+    "trackVaccination": "टीकाकरण कार्यक्रम ट्रैक करें",
+    "open": "खोलें",
+    "outbreakMap": "प्रकोप मानचित्र",
+    "seeOutbreaks": "रोग प्रकोप देखें",
+    "viewMap": "मानचित्र देखें",
+    "animalDistribution": "पशु वितरण",
+    "diseaseCases": "रोग के मामले",
+    "vaccinationCoverage": "टीकाकरण कवरेज"
+  },
+  "disease": {
+    "title": "पशु रोग पहचान",
+    "uploadInstruction": "AI द्वारा संभावित रोग पहचानने के लिए पशु की छवि अपलोड करें",
+    "detectButton": "रोग पहचानें",
+    "result": "परिणाम"
+  },
+  "animals": {
+    "title": "पशु प्रबंधन",
+    "addAnimal": "पशु जोड़ें",
+    "namePlaceholder": "पशु का नाम",
+    "typePlaceholder": "पशु का प्रकार",
+    "breedPlaceholder": "नस्ल",
+    "save": "सहेजें",
+    "colName": "नाम",
+    "colType": "प्रकार",
+    "colBreed": "नस्ल",
+    "colAction": "कार्रवाई"
+  },
+  "login": {
+    "title": "एग्रीगार्ड लॉगिन",
+    "emailPlaceholder": "ईमेल दर्ज करें",
+    "passwordPlaceholder": "पासवर्ड दर्ज करें",
+    "loginButton": "लॉगिन",
+    "noAccount": "खाता नहीं है?",
+    "register": "पंजीकरण करें"
+  },
+  "language": {
+    "select": "भाषा"
+  },
+  "register": {
+  "title": "खाता बनाएं",
+  "namePlaceholder": "नाम",
+  "emailPlaceholder": "ईमेल",
+  "passwordPlaceholder": "पासवर्ड",
+  "registerButton": "पंजीकरण करें",
+  "haveAccount": "पहले से खाता है?",
+  "login": "लॉगिन"
+  },
+  "vaccination": {
+  "pageTitle": "पशु टीकाकरण ट्रैकर",
+  "trackerTitle": "टीकाकरण ट्रैकर",
+  "addRecord": "टीकाकरण रिकॉर्ड जोड़ें",
+  "animalId": "पशु आईडी",
+  "animalType": "पशु का प्रकार",
+  "vaccineName": "टीके का नाम",
+  "add": "जोड़ें",
+  "records": "टीकाकरण रिकॉर्ड",
+  "colAnimalId": "पशु आईडी",
+  "colAnimalType": "पशु का प्रकार",
+  "colVaccine": "टीका",
+  "colDate": "तारीख",
+  "colAction": "कार्रवाई"
+  },
+  "outbreakMap": {
+  "title": "एग्रीगार्ड रोग प्रकोप मानचित्र",
+  "subtitle": "पशु रोग निगरानी"
+  },
+  "home": {
+  "navHome": "होम",
+  "navFeatures": "विशेषताएं",
+  "navAbout": "हमारे बारे में",
+  "navLogin": "लॉगिन",
+  "navRegister": "पंजीकरण",
+  "heroTitle": "एग्रीगार्ड से अपने पशुओं की रक्षा करें",
+  "heroDesc": "AI-संचालित पशु रोग पहचान और स्मार्ट फार्म निगरानी प्लेटफॉर्म जो आपके पशुओं को स्वस्थ और उत्पादक रखता है।",
+  "heroBtn": "शुरू करें",
+  "featuresTitle": "हमारी विशेषताएं",
+  "feature1Title": "AI रोग पहचान",
+  "feature1Desc": "पशु की छवि अपलोड करें और AI तकनीक से तुरंत रोग पहचानें।",
+  "feature2Title": "टीकाकरण ट्रैकर",
+  "feature2Desc": "पशुओं के टीकाकरण कार्यक्रम को ट्रैक करें और अनुस्मारक पाएं।",
+  "feature3Title": "फार्म स्वास्थ्य निगरानी",
+  "feature3Desc": "अपने पशु फार्म की स्वच्छता और स्वास्थ्य स्थितियों की निगरानी करें।",
+  "feature4Title": "पशु चिकित्सक परामर्श",
+  "feature4Desc": "पेशेवर मार्गदर्शन के लिए पशु चिकित्सा विशेषज्ञों से जुड़ें।",
+  "aboutTitle": "एग्रीगार्ड के बारे में",
+  "aboutDesc": "एग्रीगार्ड एक स्मार्ट पशु स्वास्थ्य निगरानी प्लेटफॉर्म है जो किसानों को रोग जल्दी पहचानने, फार्म स्वच्छता प्रबंधन, टीकाकरण ट्रैकिंग और पशु चिकित्सा विशेषज्ञों से जुड़ने में मदद करता है।",
+  "footer": "© 2026 एग्रीगार्ड | पशु रोग निगरानी प्लेटफॉर्म"
+  }
+}

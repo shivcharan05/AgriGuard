@@ -1,0 +1,116 @@
+{
+  "navbar": {
+    "brand": "अॅग्रीगार्ड",
+    "dashboard": "डॅशबोर्ड",
+    "profile": "प्रोफाइल",
+    "logout": "लॉग आउट"
+  },
+  "sidebar": {
+    "menu": "मेनू",
+    "dashboard": "डॅशबोर्ड",
+    "farm": "शेत",
+    "animals": "प्राणी",
+    "diseaseDetection": "रोग ओळख",
+    "vaccination": "लसीकरण",
+    "outbreakMap": "उद्रेक नकाशा",
+    "community": "समुदाय",
+    "training": "प्रशिक्षण"
+  },
+  "dashboard": {
+    "title": "डॅशबोर्ड",
+    "totalAnimals": "एकूण प्राणी",
+    "manageAnimals": "आपल्या प्राण्यांचे व्यवस्थापन करा",
+    "view": "पहा",
+    "diseaseDetection": "रोग ओळख",
+    "uploadImage": "रोग ओळखण्यासाठी प्रतिमा अपलोड करा",
+    "check": "तपासा",
+    "vaccination": "लसीकरण",
+    "trackVaccination": "लसीकरण वेळापत्रक ट्रॅक करा",
+    "open": "उघडा",
+    "outbreakMap": "उद्रेक नकाशा",
+    "seeOutbreaks": "रोग उद्रेक पहा",
+    "viewMap": "नकाशा पहा",
+    "animalDistribution": "प्राणी वितरण",
+    "diseaseCases": "रोगाची प्रकरणे",
+    "vaccinationCoverage": "लसीकरण कव्हरेज"
+  },
+  "disease": {
+    "title": "पशुधन रोग ओळख",
+    "uploadInstruction": "AI द्वारे संभाव्य रोग ओळखण्यासाठी प्राण्याची प्रतिमा अपलोड करा",
+    "detectButton": "रोग ओळखा",
+    "result": "निकाल"
+  },
+  "animals": {
+    "title": "प्राणी व्यवस्थापन",
+    "addAnimal": "प्राणी जोडा",
+    "namePlaceholder": "प्राण्याचे नाव",
+    "typePlaceholder": "प्राण्याचा प्रकार",
+    "breedPlaceholder": "जात",
+    "save": "जतन करा",
+    "colName": "नाव",
+    "colType": "प्रकार",
+    "colBreed": "जात",
+    "colAction": "कृती"
+  },
+  "login": {
+    "title": "अॅग्रीगार्ड लॉगिन",
+    "emailPlaceholder": "ईमेल प्रविष्ट करा",
+    "passwordPlaceholder": "पासवर्ड प्रविष्ट करा",
+    "loginButton": "लॉगिन",
+    "noAccount": "खाते नाही?",
+    "register": "नोंदणी करा"
+  },
+  "language": {
+    "select": "भाषा"
+  },
+  "register": {
+  "title": "खाते तयार करा",
+  "namePlaceholder": "नाव",
+  "emailPlaceholder": "ईमेल",
+  "passwordPlaceholder": "पासवर्ड",
+  "registerButton": "नोंदणी करा",
+  "haveAccount": "आधीच खाते आहे?",
+  "login": "लॉगिन"
+  },
+  "vaccination": {
+  "pageTitle": "पशुधन लसीकरण ट्रॅकर",
+  "trackerTitle": "लसीकरण ट्रॅकर",
+  "addRecord": "लसीकरण नोंद जोडा",
+  "animalId": "प्राणी आयडी",
+  "animalType": "प्राण्याचा प्रकार",
+  "vaccineName": "लसीचे नाव",
+  "add": "जोडा",
+  "records": "लसीकरण नोंदी",
+  "colAnimalId": "प्राणी आयडी",
+  "colAnimalType": "प्राण्याचा प्रकार",
+  "colVaccine": "लस",
+  "colDate": "तारीख",
+  "colAction": "कृती"
+  },
+  "outbreakMap": {
+  "title": "अॅग्रीगार्ड रोग उद्रेक नकाशा",
+  "subtitle": "पशुधन रोग निगराणी"
+  },
+  "home": {
+  "navHome": "मुख्यपृष्ठ",
+  "navFeatures": "वैशिष्ट्ये",
+  "navAbout": "आमच्याबद्दल",
+  "navLogin": "लॉगिन",
+  "navRegister": "नोंदणी",
+  "heroTitle": "अॅग्रीगार्डसह आपल्या पशुधनाचे संरक्षण करा",
+  "heroDesc": "AI-चालित पशुधन रोग ओळख आणि स्मार्ट शेत निगराणी प्लॅटफॉर्म जे आपल्या प्राण्यांना निरोगी आणि उत्पादक ठेवते।",
+  "heroBtn": "सुरू करा",
+  "featuresTitle": "आमची वैशिष्ट्ये",
+  "feature1Title": "AI रोग ओळख",
+  "feature1Desc": "प्राण्याची प्रतिमा अपलोड करा आणि AI तंत्रज्ञानाने त्वरित रोग ओळखा।",
+  "feature2Title": "लसीकरण ट्रॅकर",
+  "feature2Desc": "पशुधन लसीकरण वेळापत्रक ट्रॅक करा आणि स्मरणपत्रे मिळवा।",
+  "feature3Title": "शेत आरोग्य निगराणी",
+  "feature3Desc": "आपल्या पशुधन शेताच्या स्वच्छता आणि आरोग्य स्थितींवर लक्ष ठेवा।",
+  "feature4Title": "पशुवैद्य सल्ला",
+  "feature4Desc": "व्यावसायिक मार्गदर्शनासाठी पशुवैद्यकीय तज्ञांशी संपर्क साधा।",
+  "aboutTitle": "अॅग्रीगार्डबद्दल",
+  "aboutDesc": "अॅग्रीगार्ड हे एक स्मार्ट पशुधन आरोग्य निगराणी प्लॅटफॉर्म आहे जे शेतकऱ्यांना रोग लवकर ओळखणे, शेत स्वच्छता व्यवस्थापन, लसीकरण ट्रॅकिंग आणि पशुवैद्यकीय तज्ञांशी जोडण्यात मदत करते।",
+  "footer": "© 2026 अॅग्रीगार्ड | पशुधन रोग निगराणी प्लॅटफॉर्म"
+  }
+}

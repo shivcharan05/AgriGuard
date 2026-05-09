@@ -1,12 +1,20 @@
 <nav class="navbar">
     <div class="logo">
-        <img src="../assets/images/logo.png" width="40">
-        <span>AgriGuard</span>
+        <img src="../logo.png" width="36" height="36" style="border-radius:6px;">
+        <span class="logo-text" data-i18n="navbar.brand">AgriGuard</span>
     </div>
 
     <div id="navLinks">
-        <a href="../dashboard.html">Dashboard</a>
-        <a href="../pages/profile.html">Profile</a>
-        <button onclick="logout()">Logout</button>
+        <a href="../dashboard.html" data-i18n="navbar.dashboard">Dashboard</a>
+        <a href="../pages/profile.html" data-i18n="navbar.profile">Profile</a>
+        <button class="logout-btn" onclick="logout()" data-i18n="navbar.logout">Logout</button>
+
+        <!-- ===== LANGUAGE SWITCHER ===== -->
+        <div class="lang-switcher">
+            <button data-lang-btn="en" onclick="i18nSetLanguage('en')" title="English">EN</button>
+            <button data-lang-btn="hi" onclick="i18nSetLanguage('hi')" title="Hindi">हिं</button>
+            <button data-lang-btn="mr" onclick="i18nSetLanguage('mr')" title="Marathi">मर</button>
+        </div>
+        <!-- ============================= -->
     </div>
 </nav>
